@@ -1,0 +1,71 @@
+/*Escreva um algoritmo para ler as notas da 1a e 2a avaliações de um aluno, calcule e
+imprima a média aritmética simples desse aluno. Só devem ser aceitos valores
+válidos durante a leitura (0 a 10) para cada nota. Acrescente uma mensagem 'NOVO
+CÁLCULO (S/N)?' ao final de modo que se for respondido 'S' deve retornar e
+executar um novo cálculo, caso contrário deverá limpar a tela, agradecer e encerrar
+o algoritmo.*/  /* ||(ou) ; &&(e) */      
+
+#include <stdio.h>
+void main()
+{   
+  //Declaração das variaveis
+    float ap1, ap2, media;
+    char conf = 's';
+    
+    //Estrutura de repetição englobando toda as ações
+    while (conf != 'n' && conf != 'N')
+    {
+        
+        // Limpeza do sistema (Evitar poluição de dados)
+        system("clear");
+
+        //Teste das notas, tomando com valores bases entre [0,10]
+        do{
+        printf("\n\nDigite a nota da sua 1° avaliação: "); scanf(" %f", &ap1);
+            if(ap1<0 || ap1>10)
+            {
+                printf("\nA nota informada deve estar entre 0 e 10, informe-a novamente.");
+            }
+        }while(ap1<0 || ap1>10);
+       
+        //Teste das notas, tomando com valores bases entre [0,10]
+        do{
+        printf("\n\nDigite a nota da sua 2° avaliação: "); scanf(" %f", &ap2);
+            if(ap2<0 || ap2>10)
+            {
+                printf("\nA nota informada deve estar entre 0 e 10, informe-a novamente.");
+            }
+        }while(ap2<0 || ap2>10);
+        
+        // Declaração da media
+        media = (ap1+ap2)/2;
+        
+        // Condição de aprovação, tomando a media de aprovação >= 7.0
+        if (media>=7.0)
+        {
+            printf("\nAprovado com média aritmética simples igual a : %.2f", media);
+        }
+        
+        else
+        {
+            printf("\nReprovado com média aritmética simples igual a : %.2f", media);
+        }
+        
+        // Laço de repetição que volta para o comando while, retomando todas as ações
+        printf("\n\nDeseja realizar um novo cálculo? (S/N): "); scanf(" %c", &conf);
+    }
+        
+        
+        // Agradecimentos
+        system("clear");
+        printf("\nObrigado por usar o algoritmo!");
+}
+
+////////////////
+Sintaxe: 
+if --:> if(condição){ <Comandos que são realizados após o teste>; }
+else --:> else{ <Comandos que são realizados após o teste>;}
+while --:> while(condição){ <Comandos que são realizados após o teste>; } // só recebe os comandos apos testar
+do-while --:> do {<Comando>; } while(Condição final do laço);  // primeiro recebe os comandos para depois testar
+printf --:> auto explicativo
+scanf --:> auto explicativo
